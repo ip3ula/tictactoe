@@ -181,7 +181,45 @@ section > h2 {
 .hidden {
     display: none !important;
 }
+.play-table {
+  padding: 70px 0;
+  overflow-y: auto;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+ justify-content: center;
+ gap: 30vw;
+ align-items: center;
+ flex-direction: column;
+ 
+}
 
+.scores{
+ display: flex;
+ justify-content: space-evenly;
+ background-color: var(--primary);
+ width: 100vw;
+ position: fixed;
+}
+.scores > p {
+  font-weight: 700;
+  color: var(--fixed-white)
+}
+
+.xo-button {
+  border: 0;
+  border-radius: 2px;
+  padding: 1em;
+  font-size: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 25vw;
+  color: var(--fixed-white);
+  background-color: var(--secondary);
+  margin: 0.2em;
+}
 @keyframes width {
     from {
         margin-left: -100%;
