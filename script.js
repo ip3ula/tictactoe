@@ -1,73 +1,147 @@
-// Global variables
-//select html element
+//variables
+const playerScore = 0
+const computerScore = 0
+const gold = 0
+const modeValue = "One player"
+const levelValue = "easy"
+let clickCount = 0
+// Select HTML elements
 const navIcon = document.querySelector("#nav-icon");
-const playButton = document.querySelectorAll(".btn-spn");
-const menu = document.querySelector("#menu-container");
+const menu = document.querySelector("#menu");
+console.log("working");
 const menuItems = menu.querySelectorAll("a, button");
-const main = document.querySelector("main");
-const mainDiv = document.querySelectorAll("main > div");
-const home = document.querySelector(".menu-btn-Home");
-const homeContainer = document.querySelector(".home-container");
-const play = document.querySelector(".play-button");
-const playContainer = document.querySelector(".play-container");
-const github = document.querySelector(".menu-btn-github");
-const moon = document.querySelector(".menu-btn-moon");
-const sunIcon = document.querySelector(".menu-btn-moon > i");
+const menuUl = document.querySelector("#menu-list > ul");
+const github = document.querySelector(".menu-github");
+const mode = document.querySelector(".menu-mode");
+const homeBtn = document.querySelector(".menu-home");
+const playBtn = document.querySelector(".play-btn");
+const storeBtn = document.querySelector(".menu-store");
+const privacyLink = document.querySelector(".privacy-link");
+const termsLink = document.querySelector(".terms-link");
+const contactLink = document.querySelector(".contact-link");
+const home = document.querySelectorAll(".home");
+const play = document.querySelectorAll(".play");
+const store = document.querySelectorAll(".store");
+const privacy = document.querySelectorAll(".privacy");
+const terms = document.querySelectorAll(".terms");
+const contactUs = document.querySelectorAll(".contact-us");
+const modeBtn = document.querySelector(".mode-btn")
+const modeChevron = document.querySelector(".fa.mode")
+const levelBtn = document.querySelector(".level-btn")
+const levelChevron = document.querySelector(".level-btn")
+const chooseLevel = document.querySelector("#choose-level")
+const chooseMode = document.querySelector("#choose-mode")
+const faLevel = document.querySelector("#level-icon")
+const faMode = document.querySelector("#mode-icon")
+const tableButtons = document.querySelectorAll(".xo-button")
 // Functions
 const toggleMenu = () => {
-  if (menu.classList.contains("hidden")) {
-    menu.classList.remove("hidden");
-    navIcon.classList.replace("fa-bars", "fa-times");
-  } else {
-    menu.classList.add("hidden");
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
     navIcon.classList.replace("fa-times", "fa-bars");
+  } else {
+    menu.classList.add("active");
+    navIcon.classList.replace("fa-bars", "fa-times");
   }
 };
+
 const hideMenu = () => {
-  menu.classList.add("hidden");
+  menu.classList.remove("active");
   navIcon.classList.replace("fa-times", "fa-bars");
 };
-const changeHTML = (element) => {
-  mainDiv.forEach((div) => div.classList.add("hidden"))
-  element.classList.remove("hidden");
-  window.scrollTo({top:0});
+
+const changeHTML = (elements, sectionName) => {
+  const active = document.querySelectorAll(".active");
+  active.forEach((item) => item.classList.remove("active"));
+  elements.forEach((element) => element.classList.add("active"));
+
+  // Save the current section to localStorage
+  localStorage.setItem("activeSection", sectionName);
+
+  window.scrollTo({ top: 0 });
 };
 
 const darkMode = () => {
- document.documentElement.classList.toggle("darkmode");
-if(moon.innerText.includes("Dark")){
-  moon.innerHTML =`
- <i class="fas fa-sun"></i>white mode`; 
- localStorage.setItem("darkMode", "true");
-} else {
-  moon.innerHTML = `<i class="fas fa-moon"></i>Dark mode`;
-  localStorage.setItem("darkMode", "false");
-}
+  document.documentElement.classList.toggle("darkmode");
+  if (mode.innerText.includes("Dark")) {
+    mode.innerHTML = `<i class="fas fa-sun"></i> White Mode`;
+    localStorage.setItem("darkMode", "true");
+  } else {
+    mode.innerHTML = `<i class="fas fa-moon"></i> Dark Mode`;
+    localStorage.setItem("darkMode", "false");
+  }
+};
 
-};
-window.onload = () => {
-  if(localStorage.getItem("darkMode") === "true"){
-  darkMode();
-   }
-};
+// Restore dark mode and the last active section on page load
+window.addEventListener("DOMContentLoaded", () => {
+  // Restore dark mode
+  if (localStorage.getItem("darkMode") === "true") {
+    darkMode();
+  }
+
+  // Restore the last active section
+  const activeSection = localStorage.getItem("activeSection");
+  if (activeSection === "home") changeHTML(home, "home");
+  else if (activeSection === "play") changeHTML(play, "play");
+  else if (activeSection === "store") changeHTML(store, "store");
+  else if (activeSection === "privacy") changeHTML(privacy, "privacy");
+  else if (activeSection === "terms") changeHTML(terms, "terms");
+  else if (activeSection === "contactUs") changeHTML(contactUs, "contactUs");
+  else changeHTML(home, "home"); // Default to home if no section is saved
+});
 
 // Event listeners
 navIcon.addEventListener("click", toggleMenu);
-menuItems.forEach(menuItem => {
+menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", hideMenu);
 });
-home.addEventListener("click", () => {
-  changeHTML(homeContainer);
-});
-home.click();
-moon.addEventListener("click", darkMode);
+mode.addEventListener("click", darkMode);
 github.addEventListener("click", () => {
   window.location.href = "https://github.com/ip3ula/tictactoe";
+});
+homeBtn.addEventListener("click", () => {
+  changeHTML(home, "home");
+});
+playBtn.addEventListener("click", () => {
+  changeHTML(play, "play");
+  hideMenu();
+});
+storeBtn.addEventListener("click", () => {
+  changeHTML(store, "store");
+});
+privacyLink.addEventListener("click", () => {
+  changeHTML(privacy, "privacy");
+});
+termsLink.addEventListener("click", () => {
+  changeHTML(terms, "terms");
+});
+contactLink.addEventListener("click", () => {
+  changeHTML(contactUs, "contactUs");
+});
+modeBtn.addEventListener("click", () => { 
+  
 })
-play.addEventListener("click", () => {
-  changeHTML(playContainer)
-  hideMenu()
-  play.innerText= "cancel";
-  play.style.backgroundColor = "#404040";
-  // play.style.fontSize = "20px";
+chooseLevel.addEventListener("click", () => {
+  levelBtn.classList.toggle("active")
+  faLevel.classList.toggle("rotate")
 })
+chooseMode.addEventListener("click", () => {
+  modeBtn.classList.toggle("active")
+  faMode.classList.toggle("rotate")
+})
+tableButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    clickCount++; // Increment clickCount here
+    if(button.innerText != "X" && button.innerText != "O"){
+    if (clickCount % 2 === 1) {
+      button.innerText = "X";
+    } else { 
+      button.innerText = "O";
+    }
+  }});
+});
+// Prevent URL from changing during navigation
+window.addEventListener("popstate", (event) => {
+  history.pushState(null, "", window.location.href);
+});
+history.pushState(null, "", window.location.href);

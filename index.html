@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>tictactoe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  
+  <header>
+    <nav role="navigation" aria-label="main-menu">
+      <div><i id="nav-icon" class="fas fa-bars"></i>
+        <p>XO</p>
+      </div>
+      <button class="play-btn">Start playing <em>now</em></button>
+    </nav>
+    <div id="menu">
+      <div class="menu-buttons">
+        <button class="menu-home"><i class="fas fa-home"></i>Home</button>
+        <button class="menu-store"><i class="fas fa-shopping-bag"></i> Store</button>
+        <button class="menu-github">
+          <i class="fab fa-github"></i>
+          Github</button>
+        <button class="menu-mode"><i class="fas fa-moon"></i>Dark mode</button>
+      </div>
+        <div id="menu-list">
+          <ul class="home active">
+            <li>
+              <span><a href="#introduction">introduction</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li>
+              <span><a href="#what-is-tic-tac-toe">What Is Tic-Tac-Toe game</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+        <li>
+          <span><a href="#how-to-play">How To Play Tic-Tac-Toe</a></span>
+          <span><i class="fa fa-chevron-right"></i></span>
+          </li>
+        <li>
+          <span><a href="#game-modes-available">Game Modes Available</a></span>
+          <span><i class="fa fa-chevron-right"></i></span>
+          </li>
+        <li>
+          <span><a href="#why-play-tic-tac-toe-online">Why Play Tic-Tac-Toe Online</a></span>
+          <span><i class="fa fa-chevron-right"></i></span>
+          </li>
+        <li>
+          <span><a href="#get-started-now">Get Started Now</a></span>
+          <span><i class="fa fa-chevron-right"></i></span>
+          </li> 
+          </ul>
+          <ul class="store">
+            <li>
+              <span><a href="">Your animals</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li>
+              <span><a href="mailto:ip3ula.hotmail.com">Contact with my via email</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li>
+              <span><a href="https://github.com/ip3ula" target="_blank">see my profile in github</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+            </li>
+          </ul>
+          <ul class="play">
+            <li>
+              <span><a href="">Retry</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li id="choose-level">
+              <span>Choose the level</span>
+              <span><i id="level-icon" class="fa fa-chevron-right"></i></span>
+             <div class="level-btn">
+        <button>easy</button>
+        <button>moderate</button>
+        <button>hard</button>
+      </div></li>
+            <li id="choose-mode">
+              <span>Choose the mode</span>
+              <span><i id="mode-icon" class="fa fa-chevron-right mode"></i></span>
+            <div class="mode-btn">
+        <button>One player</button>
+        <button>Two players</button>
+      </div>
+      </li>
+            <li>
+              <span><a href="mailto:ip3ula.hotmail.com">Contact with my via email</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li>
+              <span><a href="https://github.com/ip3ula" target="_blank">see my profile in github</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+            </li>
+
+          </ul>
+          <ul class="privacy terms contact-us">
+            <li>
+              <span><a href="mailto:ip3ula.hotmail.com">Contact with my via email</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+              </li>
+            <li>
+              <span><a href="https://github.com/ip3ula" target="_blank">see my profile in github</a></span>
+              <span><i class="fa fa-chevron-right"></i></span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+  </header>
+  <main>
+    
+    <!--home-->
+    
+    <div id="home" class="home active">
+      <section id="introduction">
+        <h1>Tic-Tac-Toe Online – Play for Free!</h1>
+        <h2>The Classic Game of Strategy and Fun</h2>
+        <p>Welcome to Tic-Tac-Toe Online, the best place to enjoy the timeless game of Tic-Tac-Toe right in your
+          browser. Whether you want to challenge a friend, test your skills against an AI opponent, or simply have fun,
+          this is the perfect place for you!
+        </p>
+      </section>
+      <section id="what-is-tic-tac-toe">
+        <h2>What Is Tic-Tac-Toe?</h2>
+        <p>Tic-Tac-Toe is a simple yet engaging two-player game played on a 3x3 grid. The goal is to get three of your
+          marks (X or O) in a row before your opponent does. It’s easy to learn, but mastering it requires strategy and
+          foresight!</p>
+      </section>
+      <section id="how-to-play">
+        <h2>Basic Rules:</h2>
+        <ol>
+          <li>The game is played between two players—Player 1 (X) and Player 2 (O).</li>
+          <li>Players take turns placing their mark (X or O) in an empty square on the 3x3 grid.</li>
+          <li>The first player to align three of their marks in a row (horizontally, vertically, or diagonally) wins the
+            game.</li>
+          <li>If all 9 squares are filled and no one wins, the game ends in a draw.</li>
+        </ol>
+      </section>
+      <section id="game-modes-available">
+        <h2>Game Modes Available</h2>
+        <ul>
+          <li><strong>player vs. Player: </strong>Challenge a friend and play on the same device.</li>
+          <li><strong>Player vs. AI: </strong>Test your skills against a smart computer opponent with different
+            difficulty levels.</li>
+        </ul>
+      </section>
+      <section id="why-play-tic-tac-toe-online">
+        <h2>Why Play Tic-Tac-Toe-online?</h2>
+        <ul>
+          <li><strong>Simple &amp Fun:</strong> Easy to learn but requires strategic thinking.</li>
+          <li><strong>Fast Gameplay: </strong>Each game takes just a few minutes.</li>
+          <li><strong>No Downloads: </strong>Play directly in your web browser.</li>
+          <li><strong>Multiple Game Modes:</strong> Play solo or with friends.</li>
+          <li><strong>Works on Any Device: </strong>Enjoy on your computer, tablet, or mobile phone.</li>
+        </ul>
+      </section>
+      <section id="get-started-now">
+        <h2>get-started-now</h2>
+        <p>Are you ready to put your Tic-Tac-Toe skills to the test? Click below to start playing!</p>
+        <button class="play-btn wide">start playing<em> now</em></button>
+      </section>
+    </div>
+    
+    <!--play-->
+    
+    <div id="play" class="play">
+      <div class="scores">
+        <p>Player: <span class="player-score">0</span></p>
+        <p>Computer: <span class="computer-score">0</span></p>
+        <p>Gold: $<span class="gold">0</span></p>
+      </div>
+      <table class="play-table">
+        <tr>
+          <td><button class="xo-button 1"></button></td>
+          <td><button class="xo-button 2"></button></td>
+          <td><button class="xo-button 3"></button></td>
+        </tr>
+        <tr>
+          <td><button class="xo-button 4"></button></td>
+          <td><button class="xo-button 5"></button></td>
+          <td><button class="xo-button 6"></button></td>
+        </tr>
+        <tr>
+          <td><button class="xo-button 7"></button></td>
+          <td><button class="xo-button 8"></button></td>
+          <td><button class="xo-button 9"></button></td>
+        </tr>
+      </table>
+    </div>
+    
+    <!--store-->
+    
+    <div id="store" class="store">
+      <div class="gold-container">
+        
+      <p>$<span class="gold">0</span></p>
+      </div>
+      <!--cat-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-cat"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a cat</p>
+          <button value="5">$5</button>
+        </div>
+      </div>
+      <!--Dog-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-dog"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a dog</p>
+          <button value="10">$10</button>
+        </div>
+      </div>
+      
+      <!--hippo-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-hippo"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a hippo</p>
+          <button value="15">$15</button>
+        </div>
+      </div>
+      <!--fish-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-fish"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a fish</p>
+          <button value="20">$20</button>
+        </div>
+      </div>
+      <!--horse-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-horse"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a horse</p>
+          <button value="25">$25</button>
+        </div>
+      </div>
+      <!--spider-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-spider"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a spider</p>
+          <button value="30">$30</button>
+        </div>
+      </div>
+      <!--dove-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-dove"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a dove</p>
+          <button value="35">$35</button>
+        </div>
+      </div>
+      <!--crow-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-crow"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a crow</p>
+          <button value="40">$40</button>
+        </div>
+      </div>
+      <!--kiwi-->
+      <div class="card-container">
+        <div class="card-top">
+          <i class="fas fa-kiwi-bird"></i>
+        </div>
+        <div class="card-bottom">
+          <p>Buy a kiwi bird</p>
+          <button value="45">$45</button>
+        </div>
+      </div>
+    </div>
+    
+    <!--privacy policy-->
+    
+    <div id="privacy" class="privacy">
+      <ul>
+        <li><strong>Information We Collect</strong>
+          <ul>
+            <li>Personal Information: Name, email, contact details, etc.</li>
+            <li>Non-Personal Information: Browser type, device type, etc.</li>
+          </ul>
+        </li>
+        <li><strong>How We Use Your Information</strong>
+          <ul>
+            <li>To improve the website’s functionality.</li>
+            <li>To send updates or promotional materials (with your consent).</li>
+          </ul>
+        </li>
+        <li><strong>Sharing Your Information</strong>
+          <ul>
+            <li>We do not sell or share your information with third parties, except as required by law or to provide
+              services.</li>
+          </ul>
+        </li>
+        <li><strong>Data Security</strong>
+          <ul>
+            <li>We implement robust measures to protect your data. However, no method is completely secure.</li>
+          </ul>
+        </li>
+        <li><strong>Your Rights</strong>
+          <ul>
+            <li>You can request access to your data or its deletion.</li>
+            <li>You may opt-out of marketing communications.</li>
+          </ul>
+        </li>
+        <li><strong>Cookies</strong>
+          <ul>
+            <li>This site uses cookies to enhance user experience. You can manage cookies via your browser settings.
+            </li>
+          </ul>
+        </li>
+        <li><strong>Updates to Privacy Policy</strong>
+          <ul>
+            <li>We may update this policy. Please review it periodically for changes.</li>
+          </ul>
+        </li>
+        <li><strong>Contact Us</strong>
+          <ul>
+            <li>For privacy-related inquiries, contact us at ip3ula@hotmail.com.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <!--terms of use-->
+    
+    <div id=terms class="terms">
+      <ul>
+        <li><strong>Acceptance of Terms</strong>
+          <ul>
+            <li>By accessing or using this website, you agree to comply with and be bound by these Terms of Use.</li>
+            <li>If you do not agree, please do not use the site.</li>
+          </ul>
+        </li>
+        <li><strong>Use of the Website</strong>
+          <ul>
+            <li>You must be at least 3 years to use this site.</li>
+            <li>You agree not to use this site for any unlawful purposes.</li>
+            <li>You are responsible for any activity that occurs under your account.</li>
+          </ul>
+        </li>
+        <li><strong>Intellectual Property</strong>
+          <ul>
+            <li>All content on this website, including text, graphics, logos, and images, is the property of XO or its licensors.</li>
+            <li>Unauthorized reproduction, distribution, or use of any content is prohibited.</li>
+          </ul>
+        </li>
+        <li><strong>User-Generated Content</strong>
+          <ul>
+            <li>By submitting content to the website, you grant us a non-exclusive, worldwide, royalty-free license to
+              use, reproduce, and modify your content.</li>
+            <li>You are responsible for ensuring that your submissions do not violate third-party rights.</li>
+          </ul>
+        </li>
+        <li><strong>Privacy Policy</strong>
+          <ul>
+            <li>Your use of the website is also governed by our Privacy Policy,
+              which explains how we collect, use, and protect your information.</li>
+          </ul>
+        </li>
+        <li><strong>Limitation of Liability</strong>
+          <ul>
+            <li>XO is not liable for any direct, indirect, or consequential damages arising from your
+              use of this site.</li>
+          </ul>
+        </li>
+        <li><strong>Changes to Terms</strong>
+          <ul>
+            <li>We reserve the right to modify these Terms of Use at any time. Changes will be posted on this page, and
+              your continued use constitutes acceptance of the new terms.</li>
+          </ul>
+        </li>
+        <li><strong>Governing Law</strong>
+          <ul>
+            <li>These terms shall be governed by the laws.</li>
+          </ul>
+        </li>
+        <li><strong>Contact Us</strong>
+          <ul>
+            <li>For questions about these Terms of Use, please contact us at ip3ula@hotmail.com.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <!--contact us-->
+    
+    <div id="contact-us" class="contact-us">
+      <ul>
+        <li><strong>Contact Us</strong>
+          <ul>
+            <li>If you have any questions or concerns, please feel free to reach out to us:</li>
+            <li>Email: <a href="mailto:ip3ula.hotmail.com">ip3ula@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/[your-github-username]" target="_blank">https://github.com/ip3ula</a>
+            </li>
+            <li>We will do our best to respond to your inquiries promptly.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Paula. All rights reserved.</p>
+      <ul>
+        <li><a href="#" class="privacy-link">Privacy Policy</a></li>
+        <li><a href="#" class="terms-link">Terms of Use</a></li>
+        <li><a href="#" class="contact-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  </body>
+  </html>
